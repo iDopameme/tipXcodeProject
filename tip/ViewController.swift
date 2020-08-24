@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var tip1 = 0.15, tip2 = 0.18, tip3 = 0.2
+    
     @IBOutlet weak var billField: UITextField!
     
     @IBOutlet weak var tipLabel: UILabel!
@@ -31,11 +33,12 @@ class ViewController: UIViewController {
     
     @IBAction func calculateTip(_ sender: Any) {
         
+        
         // Get the bill amount
         let bill = Double(billField.text!) ?? 0
         
         // Calculate the tip and total
-        let tipPercentages = [0.15, 0.18, 0.2]
+        let tipPercentages = [tip1, tip2, tip3]
         
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
